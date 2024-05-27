@@ -25,9 +25,7 @@ public class Main {
 
         System.out.println("Task4");
         Task4 task4 = new Task4();
-        task4.filterNumbersMultiples3();
-        task4.squareNumbersInList();
-        task4.limitFirst10();
+        task4.doTask4();
         task4.print();
 
     }

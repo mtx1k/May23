@@ -7,10 +7,13 @@
 //Print the resulting elements and measure the time taken to perform the operations.
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Task4 {
-    private List<Integer> integerList = new ArrayList<>();
+    private final List<Integer> integerList = new ArrayList<>();
+    private List<Double> result;
 
     public Task4 () {
         fillIntegerList();
@@ -22,20 +25,26 @@ public class Task4 {
         }
     }
 
-    public void filterNumbersMultiples3() {
-        integerList = integerList.stream().filter(n -> n % 3 == 0).toList();
+    public void doTask4() {
+        filterNumbersMultiples3();
+        squareNumbersInList();
+        limitFirst10();
     }
 
-    public void squareNumbersInList() {
-        integerList = integerList.stream().map(n -> n * n).toList();
+    private void filterNumbersMultiples3() {
+        result = integerList.stream().filter(n -> n % 3 == 0).map(Integer::doubleValue).collect(Collectors.toList());
     }
 
-    public void limitFirst10() {
-        integerList = integerList.stream().limit(10).toList();
+    private void squareNumbersInList() {
+        result = result.stream().map(Math::sqrt).toList();
+    }
+
+    private void limitFirst10() {
+        result = result.stream().limit(10).toList();
     }
 
     public void print() {
-        integerList.forEach(n -> System.out.print(n + " "));
+        result.forEach(n -> System.out.print(n + " "));
         System.out.println();
     }
 }

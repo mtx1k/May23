@@ -7,7 +7,6 @@
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Task2 {
     private List<Person> persons = new ArrayList<>();
@@ -20,7 +19,7 @@ public class Task2 {
     }
 
     public void filterYounger18() {
-        persons = persons.stream().filter(o1 -> o1.getAge() <= 18).toList();
+        persons = persons.stream().filter(o1 -> o1.getAge() < 18).toList();
     }
 
     public List<String> extractNames() {

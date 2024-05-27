@@ -10,10 +10,6 @@ import java.util.List;
 public class Task3 {
     private List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9 , 10);
 
-    public Task3() {
-
-    }
-
     public int getSumInList() {
         return integerList.stream().reduce(0, Integer::sum);
     }
